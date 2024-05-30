@@ -1,0 +1,46 @@
+binding (mrna,binding_site,sequence,source,mirna_mature,probability );
+
+confidence (mirna_id,auto_mirna,exp_count ,5p_count,5p_raw_count,3p_count,3p_raw_count,5p_consistent ,5p_mature_consistent,3p_consistent ,3p_mature_consistent,5p_overhang ,3p_overhang ,energy_precursor,energy_by_length,paired_hairpin,mirdeep_score );
+
+confidence_score (auto_mirna,confidence);
+
+dead_mirna (mirna_acc,mirna_id ,previous_id,forward_to ,comment);
+
+experiments (auto_id,experiment_id,source ,description,author ,link );
+
+gene_bank (gene ,condition,source );
+
+literature_references (auto_lit,medline ,title ,author,journal );
+
+mature_database_links (auto_mature ,auto_db ,link,display_name);
+
+mature_database_url (auto_db ,display_name,url ,type);
+
+mirna (auto_mirna ,mirna_acc,mirna_id ,previous_mirna_id,description,sequence ,comment,auto_species ,dead_flag);
+
+mirna_2_prefam (auto_mirna ,auto_prefam);
+
+mirna_chromosome_build (auto_mirna,xsome ,contig_start,contig_end,strand);
+
+mirna_context (auto_mirna ,transcript_id,overlap_sense,overlap_type ,number ,transcript_source,transcript_name);
+
+mirna_database_links (auto_mirna,auto_db ,link,display_name);
+
+mirna_database_url (auto_db ,display_name,url );
+
+mirna_pre_mature (auto_mirna ,auto_mature,mature_from,mature_to);
+
+mirna_prefam (auto_prefam,prefam_acc ,prefam_id,description);
+
+mirna_seeds (auto_mature,seed ,probability);
+
+mirna_species (auto_id ,organism,division,name,taxon_id,taxonomy,genome_assembly ,genome_accession,ensembl_db);
+
+mirna_tissues (auto_id ,mirna ,system_TSI,system,organ_TSI ,organ ,source);
+
+mirnas_from_experiments (mirna,sample ,abundance,notes);
+
+organs (auto_id,organ);
+
+samples (auto_id,experiment_id,sample_name,organ,condition,age,gender ,source ,notes);
+

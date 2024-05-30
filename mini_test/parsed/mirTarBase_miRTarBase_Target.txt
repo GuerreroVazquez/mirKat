@@ -1,0 +1,29 @@
+54219		Luciferase reporter assay//qRT-PCR//Western blot	mirTarBase	Mus musculus	
+29812		Luciferase reporter assay//qRT-PCR//Western blot	mirTarBase	Mus musculus	
+11674		Luciferase reporter assay//qRT-PCR//Western blot	mirTarBase	Mus musculus	
+12041		Luciferase reporter assay//qRT-PCR//Western blot	mirTarBase	Mus musculus	
+6541		Luciferase reporter assay//Western blot	mirTarBase	Homo sapiens	
+6541		Luciferase reporter assay	mirTarBase	Homo sapiens	
+6868		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+9253		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+22887		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+23214		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+10947		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+92579		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+55568		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+55568		Immunohistochemistry//In situ hybridization//qRT-PCR//Luciferase reporter assay//Immunoprecipitaion//Western blot	mirTarBase	Homo sapiens	
+25778		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+7165		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+10000		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+10000		Immunoblot//Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+5600		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+150864		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+477		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+1844		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+65985		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+9095		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+55833		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+112399		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+4684		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+4204		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
+27086		Luciferase reporter assay//qRT-PCR	mirTarBase	Homo sapiens	
