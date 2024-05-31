@@ -1,4 +1,4 @@
-use mirkat;
+use mirkat
 -- MySQL dump 10.13  Distrib 5.6.36, for Linux (x86_64)
 --
 -- Host: localhost    Database: mirna_22b
