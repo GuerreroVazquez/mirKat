@@ -334,16 +334,12 @@ CREATE TABLE `mirna_species` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
+-- -----------------------------------------------------------------------
+-- ******************************Mirkat tables****************************
+-- -----------------------------------------------------------------------
 
-CREATE TABLE disease (
-    `auto_mature` varchar(20) NOT NULL DEFAULT '',
-    `disease` varchar(20) NOT NULL DEFAULT '',
-    INDEX auto_mature (auto_mature),
-    PRIMARY KEY(auto_mature, disease),
-    FOREIGN KEY (auto_mature)
-        REFERENCES mirna_mature(auto_mature)
-        ON DELETE CASCADE
-) ENGINE=MyISAM;
+
+
 
 CREATE TABLE mirna_seeds (
     `auto_mature` varchar(20) NOT NULL DEFAULT '',
@@ -372,7 +368,7 @@ CREATE TABLE mirna_seeds (
 --  tmpmirna: The mirna id (to be removed after the creation of the tables)
 --  tmpprobability: The probability of that particular binding
 
-DROP TABLE IF EXISTS `binding`;
+DROP TABLE IF EXISTS `gene_mirna`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 Create table `binding` (
@@ -391,7 +387,7 @@ Create table `binding` (
  ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
-Create table `gene_bank` (
+Create table `gene` (
  `gene` varchar(30) Not NULL,
  `condition` text,
  `source` varchar(30) NOT NULL,
