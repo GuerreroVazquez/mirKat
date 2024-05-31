@@ -150,13 +150,13 @@ CREATE TABLE `mirna` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `mirna_2_prefam`
+-- Table structure for table `mirna_prefam`
 --
 
-DROP TABLE IF EXISTS `mirna_2_prefam`;
+DROP TABLE IF EXISTS `mirna_prefam`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `mirna_2_prefam` (
+CREATE TABLE `mirna_prefam` (
   `auto_mirna` int(10) unsigned NOT NULL DEFAULT '0',
   `auto_prefam` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`auto_mirna`,`auto_prefam`)
