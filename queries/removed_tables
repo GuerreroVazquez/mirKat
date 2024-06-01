@@ -1,0 +1,11 @@
+CREATE TABLE disease (
+    `auto_mature` varchar(20) NOT NULL DEFAULT '',
+    `disease` varchar(20) NOT NULL DEFAULT '',
+    INDEX auto_mature (auto_mature),
+    PRIMARY KEY(auto_mature, disease),
+    FOREIGN KEY (auto_mature)
+        REFERENCES mirna_mature(auto_mature)
+        ON DELETE CASCADE
+) ENGINE=MyISAM;
+
+

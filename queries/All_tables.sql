@@ -1,4 +1,4 @@
-use mirkat
+use mirkat;
 -- MySQL dump 10.13  Distrib 5.6.36, for Linux (x86_64)
 --
 -- Host: localhost    Database: mirna_22b
@@ -368,7 +368,7 @@ CREATE TABLE mirna_seeds (
 DROP TABLE IF EXISTS `gene_mirna`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-Create table `binding` (
+Create table `gene_mirna` (
  `mrna` varchar(30) Not NULL,
  `binding_site` text,
  `sequence` text,
