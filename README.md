@@ -1,4 +1,4 @@
-# mirKat
+# mirKatDB
 Databse for microRNAs
 
 
