@@ -3,8 +3,9 @@
 
 # miRKatDB: A Comprehensive Relational Database for miRNA Research
 
-<!-- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.placeholder.svg)](https://doi.org/10.5281/zenodo.placeholder)  Update this once you mint a DOI -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18376186.svg)](https://doi.org/10.5281/zenodo.18376186)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ## Overview
 
