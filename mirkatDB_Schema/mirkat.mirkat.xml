@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?><database name="mirkat" schema="mirkat" type="MySQL - 8.0.36-0ubuntu0.20.04.1">
+   <tables>
+      <table catalog="mirkat" name="confidence" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="mirna_id" nullable="false" remarks="" size="20" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="auto_mirna" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <parent catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="2" name="exp_count" nullable="false" remarks="" size="10" type="INT" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="3" name="5p_count" nullable="false" remarks="" size="22" type="DOUBLE" typeCode="8"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="4" name="5p_raw_count" nullable="false" remarks="" size="12" type="FLOAT" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="5" name="3p_count" nullable="false" remarks="" size="12" type="FLOAT" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="6" name="3p_raw_count" nullable="false" remarks="" size="12" type="FLOAT" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="7" name="5p_consistent" nullable="false" remarks="" size="12" type="FLOAT" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="8" name="5p_mature_consistent" nullable="false" remarks="" size="4" type="DECIMAL" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="9" name="3p_consistent" nullable="false" remarks="" size="12" type="FLOAT" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="10" name="3p_mature_consistent" nullable="false" remarks="" size="4" type="DECIMAL" typeCode="3"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="5p_overhang" nullable="true" remarks="" size="10" type="INT" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="3p_overhang" nullable="true" remarks="" size="10" type="INT" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="13" name="energy_precursor" nullable="true" remarks="" size="12" type="FLOAT" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="energy_by_length" nullable="false" remarks="" size="12" type="FLOAT" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="15" name="paired_hairpin" nullable="false" remarks="" size="12" type="FLOAT" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="16" name="mirdeep_score" nullable="false" remarks="" size="22" type="DOUBLE" typeCode="8"/>
+      </table>
+      <table catalog="mirkat" name="confidence_score" numRows="57434" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="auto_mirna" nullable="false" remarks="" size="10" type="INT" typeCode="4">
+            <parent catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="confidence" nullable="false" remarks="" size="10" type="INT" typeCode="4"/>
+      </table>
+      <table catalog="mirkat" name="dead_mirna" numRows="1796" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="mirna_acc" nullable="false" remarks="" size="9" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="mirna_id" nullable="false" remarks="" size="40" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="previous_id" nullable="true" remarks="" size="100" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="forward_to" nullable="true" remarks="" size="20" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="comment" nullable="true" remarks="" size="16777215" type="MEDIUMTEXT" typeCode="-1"/>
+      </table>
+      <table catalog="mirkat" name="gene_mirna" numRows="6839289" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="mrna" nullable="false" remarks="" size="30" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="binding_site" nullable="true" remarks="" size="65535" type="TEXT" typeCode="-1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="sequence" nullable="true" remarks="" size="65535" type="TEXT" typeCode="-1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="source" nullable="false" remarks="" size="30" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="mirna_mature" nullable="false" remarks="" size="30" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="5" name="probability" nullable="false" remarks="" size="12" type="FLOAT" typeCode="7"/>
+         <index name="mirna_mature" unique="false">
+            <column ascending="true" name="mirna_mature"/>
+         </index>
+         <index name="mrna" unique="false">
+            <column ascending="true" name="mrna"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="gene_names" numRows="81407" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="RefSeq_mRNA" nullable="false" remarks="" size="30" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="gene_symbol" nullable="false" remarks="" size="30" type="VARCHAR" typeCode="12"/>
+         <index name="RefSeq_mRNA" unique="false">
+            <column ascending="true" name="RefSeq_mRNA"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="literature_references" numRows="913" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="auto_lit" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4">
+            <child catalog="mirkat" column="auto_lit" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna_literature_references"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="medline" nullable="true" remarks="" size="10" type="INT UNSIGNED" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="title" nullable="true" remarks="" size="255" type="TINYTEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="author" nullable="true" remarks="" size="255" type="TINYTEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="journal" nullable="true" remarks="" size="255" type="TINYTEXT" typeCode="12"/>
+         <primaryKey column="auto_lit" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="auto_lit"/>
+         </index>
+         <index name="text_index" unique="false">
+            <column ascending="true" name="title"/>
+            <column ascending="true" name="author"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="mature_database_links" numRows="26257" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="0" digits="0" id="0" name="auto_mature" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4">
+            <parent catalog="mirkat" column="auto_mature" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna_mature"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="auto_db" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="link" nullable="false" remarks="" size="255" type="TINYTEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="display_name" nullable="false" remarks="" size="255" type="TINYTEXT" typeCode="12"/>
+         <index name="mature_database_links" unique="true">
+            <column ascending="true" name="auto_mature"/>
+            <column ascending="true" name="auto_db"/>
+            <column ascending="true" name="link"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="mature_database_url" numRows="10" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="auto_db" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="display_name" nullable="false" remarks="" size="255" type="TINYTEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="url" nullable="false" remarks="" size="255" type="TINYTEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="type" nullable="true" remarks="" size="5" type="SMALLINT" typeCode="5"/>
+         <primaryKey column="auto_db" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="auto_db"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="mirna" numRows="39447" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="auto_mirna" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4">
+            <child catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="confidence"/>
+            <child catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="confidence_score"/>
+            <child catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna_chromosome_build"/>
+            <child catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna_context"/>
+            <child catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna_database_links"/>
+            <child catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna_literature_references"/>
+            <child catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna_pre_mature"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="mirna_acc" nullable="false" remarks="" size="9" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="mirna_id" nullable="false" remarks="" size="40" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="previous_mirna_id" nullable="false" remarks="" size="65535" type="TEXT" typeCode="-1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description" nullable="true" remarks="" size="100" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="sequence" nullable="true" remarks="" size="65535" type="BLOB" typeCode="-4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="comment" nullable="true" remarks="" size="2147483647" type="LONGTEXT" typeCode="-1"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="7" name="auto_species" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="dead_flag" nullable="false" remarks="" size="1" type="BIT" typeCode="-7"/>
+         <primaryKey column="auto_mirna" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="auto_mirna"/>
+         </index>
+         <index name="auto_species_inx" unique="false">
+            <column ascending="true" name="auto_species"/>
+         </index>
+         <index name="comment_index" unique="false">
+            <column ascending="true" name="comment"/>
+         </index>
+         <index name="description_index" unique="false">
+            <column ascending="true" name="description"/>
+         </index>
+         <index name="mirna_acc" unique="true">
+            <column ascending="true" name="mirna_acc"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="mirna_chromosome_build" numRows="35202" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="0" digits="0" id="0" name="auto_mirna" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4">
+            <parent catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="xsome" nullable="true" remarks="" size="20" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="contig_start" nullable="true" remarks="" size="19" type="BIGINT" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="contig_end" nullable="true" remarks="" size="19" type="BIGINT" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="strand" nullable="true" remarks="" size="2" type="CHAR" typeCode="1"/>
+         <index name="auto_mirna" unique="false">
+            <column ascending="true" name="auto_mirna"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="mirna_context" numRows="21196" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="0" digits="0" id="0" name="auto_mirna" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4">
+            <parent catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="transcript_id" nullable="true" remarks="" size="50" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="overlap_sense" nullable="true" remarks="" size="2" type="CHAR" typeCode="1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="overlap_type" nullable="true" remarks="" size="20" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="number" nullable="true" remarks="" size="10" type="INT" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="transcript_source" nullable="true" remarks="" size="50" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="transcript_name" nullable="true" remarks="" size="50" type="VARCHAR" typeCode="12"/>
+         <index name="auto_mirna_inx" unique="false">
+            <column ascending="true" name="auto_mirna"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="mirna_database_links" numRows="14655" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="0" digits="0" id="0" name="auto_mirna" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4">
+            <parent catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="auto_db" nullable="true" remarks="" size="10" type="INT" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="link" nullable="false" remarks="" size="255" type="TINYTEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="display_name" nullable="false" remarks="" size="255" type="TINYTEXT" typeCode="12"/>
+         <index name="mirna_database_links" unique="true">
+            <column ascending="true" name="auto_mirna"/>
+            <column ascending="true" name="link"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="mirna_database_url" numRows="5" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="auto_db" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="display_name" nullable="false" remarks="" size="255" type="TINYTEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="url" nullable="false" remarks="" size="255" type="TINYTEXT" typeCode="12"/>
+         <primaryKey column="auto_db" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="auto_db"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="mirna_literature_references" numRows="48290" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="0" digits="0" id="0" name="auto_mirna" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4">
+            <parent catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="auto_lit" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4">
+            <parent catalog="mirkat" column="auto_lit" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="literature_references"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="comment" nullable="true" remarks="" size="16777215" type="MEDIUMTEXT" typeCode="-1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="order_added" nullable="true" remarks="" size="3" type="TINYINT" typeCode="-6"/>
+      </table>
+      <table catalog="mirkat" name="mirna_mature" numRows="49168" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="auto_mature" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4">
+            <child catalog="mirkat" column="auto_mature" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mature_database_links"/>
+            <child catalog="mirkat" column="auto_mature" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna_pre_mature"/>
+         </column>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="mature_name" nullable="false" remarks="" size="40" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="previous_mature_id" nullable="false" remarks="" size="65535" type="TEXT" typeCode="-1"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="3" name="mature_acc" nullable="false" remarks="" size="20" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="evidence" nullable="true" remarks="" size="16777215" type="MEDIUMTEXT" typeCode="-1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="experiment" nullable="true" remarks="" size="16777215" type="MEDIUMTEXT" typeCode="-1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="similarity" nullable="true" remarks="" size="16777215" type="MEDIUMTEXT" typeCode="-1"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="dead_flag" nullable="false" remarks="" size="10" type="INT" typeCode="4"/>
+         <primaryKey column="auto_mature" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="auto_mature"/>
+         </index>
+         <index name="mature_acc_inx" unique="false">
+            <column ascending="true" name="mature_acc"/>
+         </index>
+         <index name="mature_name_inx" unique="false">
+            <column ascending="true" name="mature_name"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="mirna_pre_mature" numRows="53320" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="0" digits="0" id="0" name="auto_mirna" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4">
+            <parent catalog="mirkat" column="auto_mirna" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="1" name="auto_mature" nullable="false" remarks="" size="10" type="INT UNSIGNED" typeCode="4">
+            <parent catalog="mirkat" column="auto_mature" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="mirna_mature"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="mature_from" nullable="true" remarks="" size="4" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="mature_to" nullable="true" remarks="" size="4" type="VARCHAR" typeCode="12"/>
+         <index name="auto_mature" unique="false">
+            <column ascending="true" name="auto_mature"/>
+         </index>
+         <index name="auto_mirna" unique="false">
+            <column ascending="true" name="auto_mirna"/>
+         </index>
+         <index name="auto_mirna_2" unique="true">
+            <column ascending="true" name="auto_mirna"/>
+            <column ascending="true" name="auto_mature"/>
+         </index>
+         <index name="auto_mirna_3" unique="true">
+            <column ascending="true" name="auto_mirna"/>
+            <column ascending="true" name="auto_mature"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="mirna_prefam" numRows="1984" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="auto_prefam" nullable="false" remarks="" size="10" type="INT" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="prefam_acc" nullable="false" remarks="" size="15" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="prefam_id" nullable="false" remarks="" size="40" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="description" nullable="true" remarks="" size="65535" type="TEXT" typeCode="-1"/>
+         <primaryKey column="auto_prefam" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="auto_prefam"/>
+         </index>
+         <index name="prefam_acc" unique="true">
+            <column ascending="true" name="prefam_acc"/>
+         </index>
+         <index name="prefam_id" unique="true">
+            <column ascending="true" name="prefam_id"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="mirna_seeds" numRows="9994" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="" digits="0" id="0" name="auto_mature" nullable="false" remarks="" size="20" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="1" name="seed" nullable="false" remarks="" size="20" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="2" name="probability" nullable="false" remarks="" size="20" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="auto_mature" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="auto_mature"/>
+         </index>
+         <index name="auto_mature" unique="false">
+            <column ascending="true" name="auto_mature"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="mirna_species" numRows="288" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="auto_id" nullable="false" remarks="" size="19" type="BIGINT" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="organism" nullable="true" remarks="" size="10" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="division" nullable="true" remarks="" size="10" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="name" nullable="true" remarks="" size="100" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="taxon_id" nullable="true" remarks="" size="19" type="BIGINT" typeCode="-5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="taxonomy" nullable="true" remarks="" size="200" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="6" name="genome_assembly" nullable="true" remarks="" size="50" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="7" name="genome_accession" nullable="true" remarks="" size="50" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="ensembl_db" nullable="true" remarks="" size="50" type="VARCHAR" typeCode="12"/>
+         <primaryKey column="auto_id" sequenceNumberInPK="1"/>
+         <index name="PRIMARY" unique="true">
+            <column ascending="true" name="auto_id"/>
+         </index>
+         <index name="organism" unique="true">
+            <column ascending="true" name="organism"/>
+         </index>
+      </table>
+      <table catalog="mirkat" name="mirna_tissues" numRows="772" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="mirna" nullable="true" remarks="" size="40" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="system_TSI" nullable="true" remarks="" size="12" type="FLOAT" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="system" nullable="true" remarks="" size="20" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="organ_TSI" nullable="true" remarks="" size="12" type="FLOAT" typeCode="7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="organ" nullable="true" remarks="" size="20" type="VARCHAR" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="" digits="0" id="5" name="source" nullable="true" remarks="" size="50" type="VARCHAR" typeCode="12"/>
+         <index name="auto_mature_idx" unique="false">
+            <column ascending="true" name="mirna"/>
+         </index>
+         <index name="organ_idx" unique="false">
+            <column ascending="true" name="organ"/>
+         </index>
+         <index name="system_idx" unique="false">
+            <column ascending="true" name="system"/>
+         </index>
+      </table>
+   </tables>
+</database>

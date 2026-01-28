@@ -1,4 +1,4 @@
-use mirdb;
+use mirdb
 SET GLOBAL local_infile=1;
 LOAD DATA LOCAL INFILE '/var/lib/mysql-files/Data/miRBase/confidence_score.txt' INTO TABLE confidence_score ;
 LOAD DATA LOCAL INFILE '/var/lib/mysql-files/Data/miRBase/dead_mirna.txt' INTO TABLE dead_mirna ;

@@ -369,7 +369,7 @@ DROP TABLE IF EXISTS `gene_mirna`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 Create table `gene_mirna` (
- `mrna` varchar(30) Not NULL,
+ `gene` varchar(30) Not NULL,
  `binding_site` text,
  `sequence` text,
  `source` varchar(30) NOT NULL,
@@ -384,11 +384,17 @@ Create table `gene_mirna` (
  ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+
+DROP TABLE IF EXISTS `gene`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 Create table `gene` (
- `gene` varchar(30) Not NULL,
+ `gene_ensemble` varchar(30) Not NULL,
+ `gene_symbol` varchar(30) Not NULL,
+ `gene_refseq` varchar(30) Not NULL,
  `condition` text,
  `source` varchar(30) NOT NULL,
- INDEX gene (gene)
+ INDEX gene_ensemble (gene_ensemble)
  ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
  
  
